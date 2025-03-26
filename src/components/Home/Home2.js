@@ -1,18 +1,25 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {AiFillGithub,} from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+
 function Home2() {
   const sectionRef = useRef(null);
+  const [showSpotify, setShowSpotify] = useState(false);
 
   useEffect(() => {
+    // First, let's handle the main content animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('scroll-show');
+            // Only start loading Spotify after main content is visible
+            setTimeout(() => {
+              setShowSpotify(true);
+            }, 1000);
           }
         });
       },
@@ -51,7 +58,7 @@ function Home2() {
                   marginBottom: '30px',
                   lineHeight: '1.6'
                 }}>
-                  I'm a passionate Full Stack Developer with a strong drive to learn and create innovative solutions 👨‍💻
+                  I'm a passionate Full Stack Developer and music enthusiast with a strong drive to learn and create innovative solutions, whether through code 👨‍💻 or sound 🎵
                 </p>
 
                 <p style={{
@@ -85,6 +92,29 @@ function Home2() {
                 </p>
               </div>
             </div>
+          </Col>
+          <Col md={4}>
+            {showSpotify && (
+              <div className="spotify-embed-container">
+                <iframe 
+                  src="https://open.spotify.com/embed/playlist/1P8ZXjlOV07FfuwXhcGaCN?utm_source=generator&theme=0" 
+                  width="100%" 
+                  height="352" 
+                  title="Spotify Playlist"
+                  frameBorder="0" 
+                  allowFullScreen="" 
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  loading="lazy"
+                  style={{
+                    borderRadius: '12px',
+                    marginTop: '150px',
+                    opacity: 0,
+                    animation: 'spotifyFadeIn 1s ease-out forwards',
+                    animationDelay: '0.5s'
+                  }}
+                />
+              </div>
+            )}
           </Col>
         </Row>
         <Row>

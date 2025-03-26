@@ -1622,3 +1622,69 @@ button:focus {
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+/* Add these styles to prevent text selection */
+.navbar, .footer {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Also add to nav items specifically to ensure icons are covered */
+.nav-link, .footer-link, .fork-btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.spotify-wrapper {
+  z-index: 10;
+  pointer-events: none;
+  contain: layout style paint;
+}
+
+.spotify-wrapper iframe {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  contain: strict;
+}
+
+@media (max-width: 768px) {
+  .spotify-wrapper iframe {
+    width: 90% !important;
+    right: 5% !important;
+    margin-top: 100px !important;
+  }
+}
+
+.spotify-embed-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@keyframes spotifyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .spotify-embed-container {
+    margin-top: 0;
+    padding: 10px;
+  }
+  
+  .spotify-embed-container iframe {
+    margin-top: 20px !important;
+  }
+}
