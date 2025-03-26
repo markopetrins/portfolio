@@ -104,27 +104,25 @@ function ResumeNew() {
   const pageChangeClass = isPending ? 'page-transition' : '';
 
   return (
-    <div>
-      <Container fluid className="resume-section">
-        <div className="resume-top">
-          <div className="page-indicator">
-            {isPending ? (
-              <span>Loading...</span>
-            ) : (
-              <span>Page {pageNumber} of {numPages}</span>
-            )}
-          </div>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Container fluid className="resume-section" style={{ flex: 1 }}>
+        <div className="resume-top" style={{ animationDelay: '0.2s', justifyContent: 'center' }}>
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
             className="download-button"
+            style={{ animationDelay: '0.4s' }}
           >
-            <AiOutlineDownload />&nbsp;Download Resume
+            <AiOutlineDownload size={20} />
+            <span>Download</span>
           </Button>
         </div>
 
-        <div className={`pdf-wrapper ${pageChangeClass}`}>
+        <div 
+          className={`pdf-wrapper ${pageChangeClass}`}
+          style={{ animationDelay: '0.6s' }}
+        >
           {pageNumber > 1 && (
             <div
               className={`nav-arrow left ${isPending ? 'disabled' : ''}`}
@@ -153,7 +151,7 @@ function ResumeNew() {
             >
               <Page 
                 pageNumber={pageNumber} 
-                scale={width > 786 ? 0.9 : 0.5}
+                scale={width > 786 ? 0.90 : 0.6}
                 className="pdf-page"
               />
             </Document>
@@ -166,6 +164,14 @@ function ResumeNew() {
             >
               <BsChevronRight />
             </div>
+          )}
+        </div>
+
+        <div className="page-indicator" style={{ marginTop: '20px', marginBottom: '10px' }}>
+          {isPending ? (
+            <span>Loading...</span>
+          ) : (
+            <span>Page {pageNumber} of {numPages}</span>
           )}
         </div>
       </Container>

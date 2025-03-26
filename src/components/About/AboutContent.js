@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Row, Col } from "react-bootstrap";
 import { FaCode, FaLaptopCode, FaServer, FaBrain, FaMusic } from "react-icons/fa";
 
 function AboutContent() {
+  const lastCardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-show');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const currentRef = lastCardRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   const aboutCards = [
     {
       icon: <FaCode />,
@@ -39,7 +66,12 @@ function AboutContent() {
   return (
     <Row className="about-content">
       {aboutCards.map((card, index) => (
-        <Col md={index === 4 ? 12 : 6} key={index} className="about-card-col">
+        <Col 
+          md={index === 4 ? 12 : 6} 
+          key={index} 
+          className={`about-card-col ${index === 4 ? 'scroll-hidden' : ''}`}
+          ref={index === 4 ? lastCardRef : null}
+        >
           <div className={`about-card ${index === 4 ? 'about-card-wide' : ''}`}>
             <div className="about-card-icon" style={{ color: card.color }}>
               {card.icon}

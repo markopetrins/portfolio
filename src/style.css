@@ -268,7 +268,6 @@ button:focus {
   width: 100%;
   padding-bottom: 1rem;
   margin-top: 60px;
-  overflow-x: hidden;
 }
 
 .grid-pattern {
@@ -540,8 +539,15 @@ button:focus {
 }
 
 .project-card-wrapper {
-  flex: 1;
-  max-width: calc(50% - 15px);
+  padding: 15px;
+  perspective: 1000px;  /* Adds depth to the tilt effect */
+}
+
+/* Optional: Improve performance */
+.project-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .project-card {
@@ -682,8 +688,22 @@ button:focus {
 .resume-section {
   position: relative;
   padding-top: 60px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   background: transparent;
+  animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .resume {
@@ -905,12 +925,12 @@ button:focus {
 
 /* PDF container and animations */
 .pdf-wrapper {
-  position: relative;
-  width: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-bottom: 0px; /* Add space between PDF and page numbers */
 }
 
 .pdf-container {
@@ -918,7 +938,7 @@ button:focus {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 20px auto;
+  margin: 0px auto 0px;
   max-width: 800px;
   touch-action: pan-x;
   user-select: none;
@@ -967,26 +987,40 @@ button:focus {
 }
 
 .download-button {
-  min-width: 120px;
-  padding: 8px 16px;
-  background-color: #C41E3A;
-  border-color: #C41E3A;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: transparent !important;
+  color: #C41E3A !important;
+  border: 2px solid #C41E3A !important;
+  padding: 8px 24px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.3s ease !important;
 }
 
 .download-button:hover {
-  background-color: #a01830;
-  border-color: #a01830;
+  background-color: #C41E3A !important;
+  color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+}
+
+.download-button:active {
+  transform: translateY(0);
 }
 
 .page-indicator {
   text-align: center;
-  margin-top: 10px;
   color: white;
   font-size: 1.1rem;
+  padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: fit-content;
+  margin: 15px auto;
+  min-width: 120px;
 }
 
 .nav-arrow {
@@ -1089,7 +1123,7 @@ button:focus {
 }
 
 .skill-percentage {
-  color: #C41E3A;
+  color: white;
   font-weight: 600;
 }
 
@@ -1106,7 +1140,8 @@ button:focus {
   height: 100%;
   background: #C41E3A;
   border-radius: 5px;
-  will-change: width;
+  transition: width 2.5s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  width: 0;
 }
 
 .skill-category {
@@ -1479,13 +1514,13 @@ button:focus {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: white;
+  background: #C41E3A;
   border-radius: 50%;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   animation: searchBounce 0.5s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(196, 30, 58, 0.6);
   z-index: 2;
 }
 
@@ -1536,34 +1571,54 @@ button:focus {
   }
 }
 
-/* Add these rules to prevent horizontal scrolling */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+.resume-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
-/* Adjust container padding on mobile */
-@media (max-width: 767px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    overflow-x: hidden;
+@media (max-width: 786px) {
+  .resume-section {
+    padding-top: 30px; /* Reduced top padding on mobile */
   }
 
-  .home-content {
+  .resume-top {
     padding: 0 10px;
+    margin-bottom: 15px;
   }
 
-  .row {
-    margin-left: 0;
-    margin-right: 0;
+  .download-button {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 1000 !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #C41E3A !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   }
 
-  /* Adjust any elements that might be causing overflow */
-  .heading-name {
-    font-size: 1.8em !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    word-wrap: break-word;
+  .download-button svg {
+    margin: 0 !important;
   }
+
+  /* Hide the text "Download" on mobile */
+  .download-button span {
+    display: none !important;
+  }
+}
+
+.skill-category h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
 }

@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import React, { memo, useMemo, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 
 // Extract SkillBar into a separate memoized component
@@ -11,7 +11,10 @@ const SkillBar = memo(({ name, percentage }) => (
     <div className="skill-bar">
       <div 
         className="skill-progress" 
-        style={{ width: `${percentage}%` }}
+        style={{ 
+          '--final-width': `${percentage}%`,
+          width: 0
+        }}
       />
     </div>
   </div>
@@ -19,7 +22,7 @@ const SkillBar = memo(({ name, percentage }) => (
 
 // Extract SkillCategory into a separate memoized component
 const SkillCategory = memo(({ category, skills }) => (
-  <div className="skill-category">
+  <div className="skill-category scroll-hidden">
     <h3 className="skill-category-title">
       <span className="accent">{category}</span>
     </h3>
@@ -59,6 +62,31 @@ const Skills = memo(() => {
       ]
     }
   ], []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-show');
+            const progressBars = entry.target.querySelectorAll('.skill-progress');
+            progressBars.forEach(bar => {
+              const width = bar.style.getPropertyValue('--final-width');
+              bar.style.width = width;
+            });
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const hiddenElements = document.querySelectorAll('.scroll-hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      hiddenElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>

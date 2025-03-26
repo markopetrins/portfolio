@@ -16,7 +16,7 @@ function Home2() {
           }
         });
       },
-      { threshold: 0.80 }
+      { threshold: 0.43 }
     );
 
     const hiddenElements = document.querySelectorAll('.scroll-hidden');

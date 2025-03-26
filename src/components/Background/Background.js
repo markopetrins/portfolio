@@ -26,50 +26,102 @@ function Background() {
           </linearGradient>
           
           <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+            <feComposite in="SourceGraphic" operator="atop" />
           </filter>
-          
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
-            <feComposite in="SourceGraphic" operator="over" />
-          </filter>
+
+          {/* Add morphing path animation */}
+          <path id="blobPath" d="">
+            <animate
+              attributeName="d"
+              dur="20s"
+              repeatCount="indefinite"
+              values="M400,400 C450,400 450,450 400,450 C350,450 350,400 400,400;
+                     M400,400 C500,350 500,500 400,450 C300,400 300,450 400,400;
+                     M400,400 C450,400 450,450 400,450 C350,450 350,400 400,400"
+            />
+          </path>
         </defs>
         
-        {/* Lava Lamp Animation - Moved down by adjusting cy values */}
-        <g transform="translate(0, 200)"> {/* Move everything down */}
-          {/* Lava Lamp Glass Container */}
-          <rect x="0" y="800" width="1000" height="200" fill="url(#redGradient)" opacity="0.7" />
-          
-          {/* Lava Blobs with enhanced appearance - Adjusted cy values */}
-          <circle cx="300" cy="800" r="80" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
-            <animate attributeName="cy" values="800;400;800" dur="25s" repeatCount="indefinite" />
-            <animate attributeName="r" values="80;100;80" dur="15s" repeatCount="indefinite" />
-          </circle>
-          
-          <circle cx="500" cy="900" r="100" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
-            <animate attributeName="cy" values="900;500;900" dur="30s" repeatCount="indefinite" />
-            <animate attributeName="r" values="100;120;100" dur="20s" repeatCount="indefinite" />
-          </circle>
-          
-          <circle cx="200" cy="850" r="70" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
-            <animate attributeName="cy" values="850;550;850" dur="28s" repeatCount="indefinite" />
-            <animate attributeName="r" values="70;90;70" dur="18s" repeatCount="indefinite" />
-          </circle>
-          
-          <circle cx="400" cy="700" r="90" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
-            <animate attributeName="cy" values="700;450;700" dur="23s" repeatCount="indefinite" />
-            <animate attributeName="r" values="90;110;90" dur="16s" repeatCount="indefinite" />
-          </circle>
-          
-          <circle cx="600" cy="750" r="95" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
-            <animate attributeName="cy" values="750;400;750" dur="27s" repeatCount="indefinite" />
-            <animate attributeName="r" values="95;115;95" dur="17s" repeatCount="indefinite" />
-          </circle>
-          
-          <circle cx="150" cy="650" r="60" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
-            <animate attributeName="cy" values="650;350;650" dur="26s" repeatCount="indefinite" />
-            <animate attributeName="r" values="60;80;60" dur="19s" repeatCount="indefinite" />
-          </circle>
+        {/* Glass container with gradient */}
+        <rect x="0" y="0" width="1000" height="1000" fill="url(#redGradient)" opacity="0.3" />
+        
+        {/* Lava blobs with organic movement */}
+        <path d="M300,800 Q400,700 500,800 T700,800 T900,800" fill="url(#lavaGradient)" opacity="0.8" filter="url(#blur)">
+          <animate
+            attributeName="d"
+            dur="15s"
+            repeatCount="indefinite"
+            values="M300,800 Q400,700 500,800 T700,800 T900,800;
+                   M300,750 Q400,900 500,750 T700,900 T900,750;
+                   M300,800 Q400,700 500,800 T700,800 T900,800"
+            calcMode="spline"
+            keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+          />
+        </path>
+
+        {/* Large central blob */}
+        <g transform="translate(500, 500)">
+          <path d="M0,100 C50,100 100,50 100,0 C100,-50 50,-100 0,-100 C-50,-100 -100,-50 -100,0 C-100,50 -50,100 0,100" 
+                fill="url(#lavaGradient)" 
+                opacity="0.8" 
+                filter="url(#blur)">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              dur="25s"
+              values="0,0; 0,100; 0,-50; 0,0"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"
+            />
+            <animate
+              attributeName="d"
+              dur="20s"
+              repeatCount="indefinite"
+              values="M0,100 C50,100 100,50 100,0 C100,-50 50,-100 0,-100 C-50,-100 -100,-50 -100,0 C-100,50 -50,100 0,100;
+                     M0,120 C70,120 120,70 120,0 C120,-70 70,-120 0,-120 C-70,-120 -120,-70 -120,0 C-120,70 -70,120 0,120;
+                     M0,100 C50,100 100,50 100,0 C100,-50 50,-100 0,-100 C-50,-100 -100,-50 -100,0 C-100,50 -50,100 0,100"
+              calcMode="spline"
+              keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+            />
+          </path>
+        </g>
+
+        {/* Smaller floating blobs */}
+        <g transform="translate(300, 300)">
+          <path d="M0,50 C25,50 50,25 50,0 C50,-25 25,-50 0,-50 C-25,-50 -50,-25 -50,0 C-50,25 -25,50 0,50" 
+                fill="url(#lavaGradient)" 
+                opacity="0.6" 
+                filter="url(#blur)">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              dur="30s"
+              values="0,0; 100,200; -50,100; 0,0"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"
+            />
+          </path>
+        </g>
+
+        {/* Add more smaller blobs with different paths and timings */}
+        <g transform="translate(700, 400)">
+          <path d="M0,30 C15,30 30,15 30,0 C30,-15 15,-30 0,-30 C-15,-30 -30,-15 -30,0 C-30,15 -15,30 0,30" 
+                fill="url(#lavaGradient)" 
+                opacity="0.7" 
+                filter="url(#blur)">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              dur="22s"
+              values="0,0; -50,150; 50,-100; 0,0"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"
+            />
+          </path>
         </g>
       </svg>
       <Particle />
