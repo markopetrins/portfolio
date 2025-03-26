@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
@@ -9,11 +9,11 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Lazy load components for better performance
-const Home = React.lazy(() => import("./components/Home/Home"));
-const About = React.lazy(() => import("./components/About/About"));
-const Projects = React.lazy(() => import("./components/Projects/Projects"));
-const Resume = React.lazy(() => import("./components/Resume/ResumeNew"));
+// Lazy load components
+const Home = lazy(() => import("./components/Home/Home"));
+const About = lazy(() => import("./components/About/About"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
+const Resume = lazy(() => import("./components/Resume/ResumeNew"));
 
 function App() {
   const [load, setLoad] = React.useState(true);
@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Background />

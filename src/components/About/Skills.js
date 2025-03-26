@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import { Row, Col } from "react-bootstrap";
 
-function Skills() {
-  const skillCategories = [
+const Skills = memo(() => {
+  const skillCategories = useMemo(() => [
     {
       category: "Frontend Development",
       skills: [
@@ -26,7 +26,7 @@ function Skills() {
         { name: "AI / Machine Learning", percentage: 65 },
       ]
     }
-  ];
+  ], []);
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
@@ -58,6 +58,6 @@ function Skills() {
       </Col>
     </Row>
   );
-}
+});
 
 export default Skills;

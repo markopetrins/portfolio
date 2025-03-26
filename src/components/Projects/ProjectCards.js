@@ -1,12 +1,17 @@
-import React from "react";
+import React, { memo } from "react";
 import { BsGithub } from "react-icons/bs";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-function ProjectCards({ imgPath, title, description, tech, ghLink, demoLink }) {
+const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink }) => {
   return (
     <div className="project-card">
       <div className="project-image-container">
-        <img src={imgPath} alt={title} className="project-image" />
+        <img 
+          src={imgPath} 
+          alt={title} 
+          className="project-image" 
+          loading="lazy" 
+        />
         <div className="project-overlay">
           <div className="project-links">
             <span className="construction-badge">
@@ -38,6 +43,6 @@ function ProjectCards({ imgPath, title, description, tech, ghLink, demoLink }) {
       </div>
     </div>
   );
-}
+});
 
 export default ProjectCards;
