@@ -8,33 +8,44 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Soumyajit Behera </span>
-            from <span className="purple"> Bhubaneswar, India.</span>
+            Hi, I'm <span className="purple">Marko Petrina </span>
+            from <span className="purple">Stoney Creek, Ontario, Canada.</span>
             <br />
-            I am currently employed as a software developer at Juspay.
+            I'm currently a Software Co-op Student at Mohawk College with a GPA of 3.52.
             <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
+            I recently worked as a Software Developer Co-op at Rosa Flora Limited, and I'm currently a Frontend Web Developer (Internship) at Actor's Pocket Guide.
             <br />
             <br />
-            Apart from coding, some other activities that I love to do!
+            I'm also engaged in an ongoing research project:
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight /> Facial Recognition & Soldier Identification Research with the Royal Canadian Air Force Museum
+            </li>
+          </ul>
+          <br />
+          <p style={{ textAlign: "justify" }}>
+            In this project, I'm contributing to identifying soldiers who have not been identified through advanced facial recognition technology.
+            <br />
+            <br />
+            My professional experience includes:
+          </p>
+          <ul>
+            <li className="about-activity">
+              <ImPointRight /> Resolving bug tickets and developing web applications at Rosa Flora Limited
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight /> Creating a mass reporting system that consolidated over 20 reports using SQL, Vue3, .NET and TypeScript
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight /> Building Angular-based UI components for an interactive web platform at Actor's Pocket Guide
             </li>
           </ul>
 
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+          <p style={{ color: "rgb(210, 43, 43)" }}>
+            "Aspiring to build innovative solutions through technology!"{" "}
           </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          <footer className="blockquote-footer">Marko</footer>
         </blockquote>
       </Card.Body>
     </Card>
