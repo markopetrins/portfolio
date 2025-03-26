@@ -5,10 +5,10 @@
 
 <div align="center">
   <h3>Desktop View</h3>
-  <img alt="Desktop Demo" src="./Images/portfolio-demo.png" />
+  <img alt="Desktop Demo" src="./Images/readme-img.png" />
   
   <h3>Mobile View</h3>
-  <img alt="Mobile Demo" src="./Images/portfolio-mobile.png" width="300px" />
+  <img alt="Mobile Demo" src="./Images/readme-img1.png" width="300px" />
 </div>
 
 <br/>
