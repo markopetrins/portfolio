@@ -28,7 +28,7 @@ function Home2() {
                 marginBottom: '30px',
                 lineHeight: '1.6'
               }}>
-                I fell in love with programming and I have at least learnt something, I think... 👨‍💻
+                I'm a passionate Full Stack Developer with a strong drive to learn and create innovative solutions 👨‍💻
               </p>
 
               <p style={{
@@ -36,9 +36,13 @@ function Home2() {
                 marginBottom: '30px',
                 lineHeight: '1.6'
               }}>
-                I am fluent in{' '}
+                I work primarily with{' '}
                 <span style={{ color: '#C41E3A' }}>
-                  C#, .NET, Vue3, Nuxt, Java, and Angular
+                  Vue.js, JavaScript, and .NET
+                </span>{' '}
+                for web development, and I'm continuously expanding my expertise in{' '}
+                <span style={{ color: '#C41E3A' }}>
+                  Python and React
                 </span>
               </p>
 
@@ -47,29 +51,14 @@ function Home2() {
                 marginBottom: '30px',
                 lineHeight: '1.6'
               }}>
-                My field of Interest's are building new{' '}
+                My current focus is on building{' '}
                 <span style={{ color: '#C41E3A' }}>
-                  Web Technologies and Products
+                  enterprise-level applications
                 </span>{' '}
-                and also in areas related to{' '}
+                and exploring emerging technologies in{' '}
                 <span style={{ color: '#C41E3A' }}>
-                  Artificial Intelligence
+                  AI and Machine Learning
                 </span>
-              </p>
-
-              <p style={{
-                fontSize: '24px',
-                marginBottom: '30px',
-                lineHeight: '1.6'
-              }}>
-                Whenever possible, I also apply my passion for developing products with{' '}
-                <span style={{ color: '#C41E3A' }}>Node.js</span>{' '}
-                and Modern{' '}
-                <span style={{ color: '#C41E3A' }}>
-                  JavaScript Libraries and Frameworks
-                </span>{' '}
-                like{' '}
-                <span style={{ color: '#C41E3A' }}>React.js and Next.js</span>
               </p>
             </div>
           </Col>
