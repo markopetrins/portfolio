@@ -268,6 +268,7 @@ button:focus {
   width: 100%;
   padding-bottom: 1rem;
   margin-top: 60px;
+  overflow-x: hidden;
 }
 
 .grid-pattern {
@@ -319,7 +320,7 @@ button:focus {
 }
 
 .heading-name {
-  font-size: 2.5em !important;
+  font-size: 2em !important;
   padding-left: 45px !important;
 }
 
@@ -1391,4 +1392,178 @@ button:focus {
 .nav-link svg {
   margin-bottom: 2px;
   font-size: 1.1em;
+}
+
+/* Page Opening Animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-mount {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Scroll Animation */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial mount animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-mount {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+/* Scroll Animation */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Name Search Animation */
+@keyframes searchBounce {
+  0% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(-15px) translateX(-50%); }
+  100% { transform: translateY(0) translateX(-50%); }
+}
+
+.name-letter {
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.name-letter.highlighted {
+  color: #C41E3A;
+}
+
+.search-pointer {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: searchBounce 0.5s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  z-index: 2;
+}
+
+.name-space {
+  margin: 0 0.2em !important;
+  display: inline-block;
+  position: relative;
+}
+
+.search-trail {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawTrail 0.25s ease-out forwards;
+}
+
+@keyframes drawTrail {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Add responsive adjustments */
+@media (max-width: 767px) {
+  .search-pointer {
+    width: 6px;
+    height: 6px;
+    bottom: -12px;
+  }
+  
+  .heading-name {
+    font-size: 1.8em !important;
+    padding-left: 20px !important;
+  }
+  
+  .name-space {
+    margin: 0 0.15em !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading-name {
+    font-size: 2.2em !important;
+    padding-left: 45px !important;
+  }
+  
+  .name-space {
+    margin: 0 0.2em !important;
+  }
+}
+
+/* Add these rules to prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Adjust container padding on mobile */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+  }
+
+  .home-content {
+    padding: 0 10px;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Adjust any elements that might be causing overflow */
+  .heading-name {
+    font-size: 1.8em !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    word-wrap: break-word;
+  }
 }
