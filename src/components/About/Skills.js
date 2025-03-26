@@ -1,6 +1,38 @@
 import React, { memo, useMemo } from "react";
 import { Row, Col } from "react-bootstrap";
 
+// Extract SkillBar into a separate memoized component
+const SkillBar = memo(({ name, percentage }) => (
+  <div className="skill-item">
+    <div className="skill-info">
+      <span className="skill-name">{name}</span>
+      <span className="skill-percentage">{percentage}%</span>
+    </div>
+    <div className="skill-bar">
+      <div 
+        className="skill-progress" 
+        style={{ width: `${percentage}%` }}
+      />
+    </div>
+  </div>
+));
+
+// Extract SkillCategory into a separate memoized component
+const SkillCategory = memo(({ category, skills }) => (
+  <div className="skill-category">
+    <h3 className="skill-category-title">
+      <span className="accent">{category}</span>
+    </h3>
+    {skills.map((skill, index) => (
+      <SkillBar 
+        key={`${category}-${index}`}
+        name={skill.name}
+        percentage={skill.percentage}
+      />
+    ))}
+  </div>
+));
+
 const Skills = memo(() => {
   const skillCategories = useMemo(() => [
     {
@@ -34,26 +66,12 @@ const Skills = memo(() => {
         Professional <strong className="accent">Skills</strong>
       </h1>
       <Col xs={12} md={10} className="skills-container">
-        {skillCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="skill-category">
-            <h3 className="skill-category-title">
-              <span className="accent">{category.category}</span>
-            </h3>
-            {category.skills.map((skill, skillIndex) => (
-              <div key={skillIndex} className="skill-item">
-                <div className="skill-info">
-                  <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skill.percentage}%</span>
-                </div>
-                <div className="skill-bar">
-                  <div 
-                    className="skill-progress" 
-                    style={{ width: `${skill.percentage}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+        {skillCategories.map((category, index) => (
+          <SkillCategory
+            key={category.category}
+            category={category.category}
+            skills={category.skills}
+          />
         ))}
       </Col>
     </Row>

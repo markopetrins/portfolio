@@ -4,23 +4,24 @@
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^3.1.14",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.26.1",
-    "bootstrap": "^5.1.3",
+    "ajv": "^8.17.1",
+    "axios": "^1.6.2",
+    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.2.1",
+    "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
-    "react-github-calendar": "^3.2.2",
-    "react-icons": "^4.8.0",
-    "react-parallax-tilt": "^1.7.42",
-    "react-pdf": "^7.7.1",
+    "react-github-calendar": "^4.0.1",
+    "react-icons": "^4.12.0",
+    "react-parallax-tilt": "^1.7.175",
+    "react-pdf": "^7.7.0",
     "react-router-dom": "^6.22.0",
-    "react-scripts": "5.0.0",
-    "react-tsparticles": "^1.42.2",
-    "sharp": "^0.33.5",
-    "typewriter-effect": "^2.18.2",
+    "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "schema-utils": "^4.3.0",
+    "typewriter-effect": "^2.21.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -50,7 +51,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.1.0"
   },
   "homepage": "https://markopetrins.github.io/portfolio"
 }

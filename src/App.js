@@ -1,5 +1,10 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -27,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/portfolio">
+    <BrowserRouter basename="/portfolio">
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Background />
@@ -44,7 +49,7 @@ function App() {
         </Suspense>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
