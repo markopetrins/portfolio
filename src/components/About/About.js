@@ -1,9 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Github from "./Github";
-import Techstack from "./Techstack";
-import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
+import Skills from "./Skills";
+import AboutContent from "./AboutContent";
 import Toolstack from "./Toolstack";
 
 function About() {
@@ -11,39 +9,24 @@ function About() {
     <Container fluid className="about-section">
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
-          <Col
-            md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
-          >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="accent">I'M</strong>
+          <Col md={12} className="about-header text-center">
+            <h1 className="heading-about">
+              Know Who <strong className="accent">I AM</strong>
             </h1>
-            <Aboutcard />
-          </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <p className="about-subtitle">
+              A passionate Full Stack Developer who loves to code and create
+            </p>
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional <strong className="accent">Skillset </strong>
-        </h1>
+        
+        <AboutContent />
 
-        <Techstack />
+        <Skills />
 
         <h1 className="project-heading">
           <strong className="accent">Tools</strong> I use
         </h1>
         <Toolstack />
-
-        <Github />
       </Container>
     </Container>
   );

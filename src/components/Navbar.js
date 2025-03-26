@@ -19,6 +19,7 @@ function NavBar() {
   const [navColour, updateNavbar] = useState(false);
 
   function scrollHandler() {
+    // Change to check scroll position instead of home2 section
     if (window.scrollY >= 20) {
       updateNavbar(true);
     } else {

@@ -1,25 +1,56 @@
 <h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
+  Marko Petrina - Portfolio Website<br/>
+  <a href="https://markopetrina.com" target="_blank">markopetrina.com</a>
 </h2>
+
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+  <img alt="Demo" src="./Images/portfolio-demo.png" />
 </div>
 
 <br/>
 
-<center>
+## Built With
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+My personal portfolio showcases my projects and skills as a Full Stack Developer. Built with:
 
-</center>
+- React.js
+- Bootstrap
+- CSS3
+- VSCode
+- Vercel
+
+## Key Features
+
+**🎨 Modern Design with Glassmorphism Effects**
+- Clean, modern interface with subtle blur effects and transparent elements
+- Responsive design that works on all devices
+
+**📱 Interactive Project Showcase**
+- Featured projects with detailed descriptions
+- Technology tags for each project
+- Hover effects with project links
+
+**💻 Skills & Expertise Display**
+- Visual representation of technical skills
+- Categorized display of frontend, backend, and additional technologies
+- Dynamic progress bars showing proficiency levels
+
+**🎵 Personal Touch**
+- Integration of music production hobby
+- Comprehensive about section with professional background
+
+## Installation and Setup
+
+1. Clone this repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
+
+The site will be available at [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
 
 <h3 align="center">
-    🔹
+    ��
     <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
     🔹
     <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
@@ -28,27 +59,6 @@
 ## TL;DR
 
 You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
-
-## Built With
-
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
-
-This project was built using these technologies.
-
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
-
-## Features
-
-**📖 Multi-Page Layout**
-
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
-
-**📱 Fully Responsive**
 
 ## Getting Started
 
@@ -74,3 +84,16 @@ You will find all the components used and you can edit your information accordin
 Give a ⭐ if you like this website!
 
 <a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+
+## Customization
+
+The site is built to be easily customizable:
+- Colors can be adjusted in `src/style.css`
+- Content can be modified in respective component files
+- Projects can be added/modified in `src/components/Projects/Projects.js`
+
+## Contact
+
+Marko Petrina - [LinkedIn](https://www.linkedin.com/in/marko-petrina-a89b4a261/)
+
+Project Link: [https://github.com/markopetrins/portfolio](https://github.com/markopetrins/portfolio)
