@@ -1,6 +1,6 @@
 <h2 align="center">
   Marko Petrina - Portfolio Website<br/>
-  <a href="https://markopetrina.com" target="_blank">markopetrina.com</a>
+  <a href="https://markopetrins.github.io/portfolio" target="_blank">markopetrins.github.io/portfolio</a>
 </h2>
 
 <div align="center">

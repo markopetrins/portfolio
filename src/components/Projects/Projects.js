@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import editor from "../../Assets/Projects/codeEditor.png";
 import emotion from "../../Assets/Projects/emotion.png";
