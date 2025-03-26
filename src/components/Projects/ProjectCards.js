@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { BsGithub } from "react-icons/bs";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink }) => {
+const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink, hideConstruction }) => {
   return (
     <div className="project-card">
       <div className="project-image-container">
@@ -14,9 +14,11 @@ const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink
         />
         <div className="project-overlay">
           <div className="project-links">
-            <span className="construction-badge">
-              🚧 Under Construction
-            </span>
+            {!hideConstruction && (
+              <span className="construction-badge">
+                🚧 Under Construction
+              </span>
+            )}
             {ghLink && (
               <a href={ghLink} target="_blank" rel="noopener noreferrer" className="project-link">
                 <BsGithub /> Code
@@ -24,7 +26,7 @@ const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink
             )}
             {demoLink && (
               <a href={demoLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                <FaExternalLinkAlt /> Live Demo
+                <FaExternalLinkAlt /> Visit Page
               </a>
             )}
           </div>
