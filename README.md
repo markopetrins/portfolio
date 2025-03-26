@@ -4,7 +4,11 @@
 </h2>
 
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img.png" />
+  <h3>Desktop View</h3>
+  <img alt="Desktop Demo" src="./Images/portfolio-demo.png" />
+  
+  <h3>Mobile View</h3>
+  <img alt="Mobile Demo" src="./Images/portfolio-mobile.png" width="300px" />
 </div>
 
 <br/>
