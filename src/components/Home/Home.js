@@ -1,15 +1,16 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import TiltAvatar from "../Avatar/TiltAvatar";
 
 function Home() {
   return (
     <section>
-      <Container fluid className="home-section" id="home">
-        <Particle />
+      <Particle />
+      <div className="main-section">
+        <div className="grid-pattern"></div>
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -25,22 +26,16 @@ function Home() {
                 <strong className="main-name"> MARKO PETRINA</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div style={{ padding: "50px 50px 25px 50px", textAlign: "left" }}>
                 <Type />
               </div>
             </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+            <Col md={3} style={{ paddingBottom: 20, paddingTop: 0, marginTop: "-20px" }}>  
+              <TiltAvatar />
             </Col>
           </Row>
         </Container>
-      </Container>
+      </div>
       <Home2 />
     </section>
   );

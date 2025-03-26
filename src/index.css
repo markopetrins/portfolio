@@ -4,5 +4,51 @@ body {
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+  background-image: linear-gradient(to left, rgb(22, 8, 12), rgb(15, 3, 6));
+}
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #b82525;
+  --bs-purple: #C41E3A;
+  --bs-pink: #d63384;
+  --bs-red: #C41E3A;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #C41E3A;
+  --bs-secondary: #911f1f;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #C41E3A;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+
+/* Override any Bootstrap components that use purple */
+.text-purple, .bg-purple {
+  color: #C41E3A !important;
+}
+
+.bg-purple {
+  background-color: #C41E3A !important;
+}
+
+/* Override any inline styles */
+[style*="color: purple"],
+[style*="color:#6f42c1"],
+[style*="color: #6f42c1"] {
+  color: #C41E3A !important;
+}
+
+[style*="background-color: purple"],
+[style*="background-color:#6f42c1"],
+[style*="background-color: #6f42c1"] {
+  background-color: #C41E3A !important;
 }
