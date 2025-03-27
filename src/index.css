@@ -5,6 +5,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to left, rgb(22, 8, 12), rgb(15, 3, 6));
+  color-scheme: dark;
+  forced-color-adjust: none;
 }
 
 :root {

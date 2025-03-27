@@ -110,7 +110,9 @@ function Home2() {
                     marginTop: '150px',
                     opacity: 0,
                     animation: 'spotifyFadeIn 1s ease-out forwards',
-                    animationDelay: '0.5s'
+                    animationDelay: '0.5s',
+                    backgroundColor: '#000000',
+                    colorScheme: 'normal'
                   }}
                 />
               </div>

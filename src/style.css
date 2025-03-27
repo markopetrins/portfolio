@@ -12,6 +12,9 @@ html {
     rgba(30, 12, 15, 0.70),
     rgba(22, 8, 10, 0.90)
   );
+
+  color-scheme: dark;
+  forced-color-adjust: none;
 }
 
 .accent {
@@ -1687,4 +1690,13 @@ button:focus {
   .spotify-embed-container iframe {
     margin-top: 20px !important;
   }
+}
+
+.spotify-embed-container iframe {
+  color-scheme: normal;
+  forced-color-adjust: none;
+  background-color: #000000;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  contain: strict;
 }
