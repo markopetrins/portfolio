@@ -1,8 +1,10 @@
 import React, { memo } from "react";
 import { BsGithub } from "react-icons/bs";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink, hideConstruction }) => {
+  const { t } = useTranslation();
   return (
     <div className="project-card">
       <div className="project-image-container">
@@ -16,17 +18,17 @@ const ProjectCards = memo(({ imgPath, title, description, tech, ghLink, demoLink
           <div className="project-links">
             {!hideConstruction && (
               <span className="construction-badge">
-                🚧 Under Construction
+                🚧 {t("Under Construction")}
               </span>
             )}
             {ghLink && (
               <a href={ghLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                <BsGithub /> Code
+                <BsGithub /> {t("Code")}
               </a>
             )}
             {demoLink && (
               <a href={demoLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                <FaExternalLinkAlt /> Visit Page
+                <FaExternalLinkAlt /> {t("Visit Page")}
               </a>
             )}
           </div>

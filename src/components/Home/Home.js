@@ -4,9 +4,11 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import TiltAvatar from "../Avatar/TiltAvatar";
+import { useTranslation } from "../../hooks/useTranslation";
 
 function Home() {
   const [currentLetterIndex, setCurrentLetterIndex] = useState(-1);
+  const { t } = useTranslation();
   const firstName = "MARKO";
   const lastName = "PETRINA";
   const name = `${firstName} ${lastName}`;
@@ -74,14 +76,14 @@ function Home() {
           <Row className="align-items-center">
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading animate-on-mount">
-                Hi There!{" "}
+                {t("Hi There!")}{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name animate-on-mount delay-200">
-                I'M
+                {t("I'M")}
                 <strong className="main-name">
                   {" "}
                   {renderName()}

@@ -12,13 +12,16 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
+import { useLanguage } from "../context/LanguageContext";
+import { useTranslation } from "../hooks/useTranslation";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
 
   function scrollHandler() {
-    // Change to check scroll position instead of home2 section
     if (window.scrollY >= 20) {
       updateNavbar(true);
     } else {
@@ -34,9 +37,10 @@ function NavBar() {
       fixed="top"
       expand="md"
       className={navColour ? "sticky" : "navbar"}
+      style={{ position: 'relative' }}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href="/portfolio" className="d-flex">
           <span style={{ 
             color: "#C41E3A", 
             fontWeight: "bold", 
@@ -60,7 +64,7 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> {t("Home")}
               </Nav.Link>
             </Nav.Item>
 
@@ -70,7 +74,7 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> {t("About")}
               </Nav.Link>
             </Nav.Item>
 
@@ -83,7 +87,7 @@ function NavBar() {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Projects
+                {t("Projects")}
               </Nav.Link>
             </Nav.Item>
 
@@ -93,7 +97,7 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <CgFileDocument style={{ marginBottom: "2px" }} /> {t("Resume")}
               </Nav.Link>
             </Nav.Item>
 
@@ -110,6 +114,19 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <div className="language-switcher" style={{ position: 'absolute', top: 0, right: 0, height: '100%', display: 'flex', alignItems: 'center', paddingRight: '2rem', zIndex: 10000 }}>
+        <img
+          src={process.env.PUBLIC_URL + (language === 'hr' ? '/hr-flag.png' : '/en-flag.png')}
+          alt="Switch Language"
+          style={{
+            width: '34px',
+            height: '24px',
+            cursor: 'pointer',
+            zIndex: 10000
+          }}
+          onClick={toggleLanguage}
+        />
+      </div>
     </Navbar>
   );
 }

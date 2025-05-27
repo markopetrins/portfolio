@@ -3,11 +3,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import {AiFillGithub,} from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useTranslation } from "../../hooks/useTranslation";
 
 
 function Home2() {
   const sectionRef = useRef(null);
   const [showSpotify, setShowSpotify] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // First, let's handle the main content animations
@@ -49,7 +51,7 @@ function Home2() {
                 marginBottom: '40px',
                 fontWeight: '600'
               }} className="animate-on-mount">
-                LET ME <span style={{ color: '#C41E3A' }}>INTRODUCE</span> MYSELF
+                {t("LET ME INTRODUCE MYSELF")}
               </h1>
 
               <div className="scroll-hidden">
@@ -58,7 +60,7 @@ function Home2() {
                   marginBottom: '30px',
                   lineHeight: '1.6'
                 }}>
-                  I'm a passionate Full Stack Developer and music enthusiast with a strong drive to learn and create innovative solutions, whether through code 👨‍💻 or sound 🎵
+                  {t("I'm a passionate Full Stack Developer")}
                 </p>
 
                 <p style={{
@@ -66,11 +68,11 @@ function Home2() {
                   marginBottom: '30px',
                   lineHeight: '1.6'
                 }}>
-                  I work primarily with{' '}
+                  {t("I work primarily with")}{' '}
                   <span style={{ color: '#C41E3A' }}>
                     Vue.js, JavaScript, and .NET
                   </span>{' '}
-                  for web development, and I'm continuously expanding my expertise in{' '}
+                  {t("for web development")}, {t("and I'm continuously expanding my expertise in")}{' '}
                   <span style={{ color: '#C41E3A' }}>
                     Python and React
                   </span>
@@ -81,11 +83,11 @@ function Home2() {
                   marginBottom: '30px',
                   lineHeight: '1.6'
                 }}>
-                  My current focus is on building{' '}
+                  {t("My current focus is on building")}{' '}
                   <span style={{ color: '#C41E3A' }}>
                     enterprise-level applications
                   </span>{' '}
-                  and exploring emerging technologies in{' '}
+                  {t("and exploring emerging technologies in")}{' '}
                   <span style={{ color: '#C41E3A' }}>
                     AI and Machine Learning
                   </span>
@@ -121,9 +123,9 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social scroll-hidden">
-            <h1>FIND ME ON</h1>
+            <h1>{t("FIND ME ON")}</h1>
             <p>
-              Feel free to <span className="accent">connect </span>with me
+              {t("Feel free to connect with me")}
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

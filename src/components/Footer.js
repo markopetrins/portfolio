@@ -5,18 +5,20 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useTranslation } from "../hooks/useTranslation";
 
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
+  const { t } = useTranslation();
   return (
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed by Marko Petrina</h3>
+          <h3>{t("Designed by Marko Petrina")}</h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} MP</h3>
+          <h3>{t("Copyright © {year} MP").replace("{year}", year)}</h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">

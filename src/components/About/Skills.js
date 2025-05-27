@@ -1,5 +1,6 @@
 import React, { memo, useMemo, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
+import { useTranslation } from "../../hooks/useTranslation";
 
 // Extract SkillBar into a separate memoized component
 const SkillBar = memo(({ name, percentage }) => (
@@ -37,9 +38,10 @@ const SkillCategory = memo(({ category, skills }) => (
 ));
 
 const Skills = memo(() => {
+  const { t } = useTranslation();
   const skillCategories = useMemo(() => [
     {
-      category: "Frontend Development",
+      category: t("Frontend Development"),
       skills: [
         { name: "React / Next.js", percentage: 90 },
         { name: "Vue3 / Nuxt", percentage: 85 },
@@ -47,7 +49,7 @@ const Skills = memo(() => {
       ]
     },
     {
-      category: "Backend Development",
+      category: t("Backend Development"),
       skills: [
         { name: "SQL / Database", percentage: 88 },
         { name: "C# / .NET", percentage: 75 },
@@ -55,13 +57,13 @@ const Skills = memo(() => {
       ]
     },
     {
-      category: "Additional Technologies",
+      category: t("Additional Technologies"),
       skills: [
         { name: "Python", percentage: 75 },
         { name: "AI / Machine Learning", percentage: 65 },
       ]
     }
-  ], []);
+  ], [t]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,7 +93,7 @@ const Skills = memo(() => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
-        Professional <strong className="accent">Skills</strong>
+        {t("Professional")} <strong className="accent">{t("Skills")}</strong>
       </h1>
       <Col xs={12} md={10} className="skills-container">
         {skillCategories.map((category, index) => (

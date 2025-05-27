@@ -1700,3 +1700,24 @@ button:focus {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   contain: strict;
 }
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.language-switcher:hover {
+  background: none !important;
+}
+
+.language-switcher img {
+  transition: transform 0.3s ease;
+}
+
+.language-switcher:hover img {
+  transform: scale(1.1);
+}
