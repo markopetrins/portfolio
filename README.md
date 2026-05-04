@@ -4,7 +4,7 @@ Retro-inspired bilingual developer portfolio with animated UI, project showcases
 
 ## Live Demo
 
-`https://markopetrins.github.io/portfolio/`
+https://markopetrins.github.io/portfolio/
 
 ## Features
 
