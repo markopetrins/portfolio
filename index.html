@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marko Petrina | Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-particles" aria-hidden="true"></div>
+    <div class="cursor-trail-container" aria-hidden="true"></div>
+    <div class="app window-frame">
+      <aside class="sidebar">
+        <h1 class="site-title">Marko Petrina</h1>
+        <p class="subtitle">Developer Portfolio</p>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><button class="nav-link active" data-page="about">About Me</button></li>
+            <li><button class="nav-link" data-page="skills">Skills</button></li>
+            <li><button class="nav-link" data-page="projects">Projects</button></li>
+            <li><button class="nav-link" data-page="resume">Resume</button></li>
+            <li><button class="nav-link" data-page="contact">Contact Me</button></li>
+          </ul>
+        </nav>
+        <div class="lang-toggle-wrap">
+          <p class="lang-note">I'm Bilingual</p>
+          <button
+            type="button"
+            class="lang-toggle"
+            aria-label="Switch language to Croatian"
+            aria-pressed="false"
+            data-lang="en"
+          >
+            <span class="flag-icon" aria-hidden="true"></span>
+            <span class="lang-label">EN</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="content-area">
+        <section id="about" class="page active" aria-labelledby="about-title">
+          <h2 id="about-title">About Me</h2>
+          <div class="about-layout">
+            <div class="about-left-column">
+              <div class="photo-frame profile-photo">
+                <img src="./assets/images/profile/profile.jpg" alt="Marko Petrina profile photo" />
+              </div>
+              <p class="profile-name">Marko Petrina</p>
+              <div class="social-links photo-frame" aria-label="Social media links">
+                <p class="social-label">Socials</p>
+                <a href="https://instagram.com/marko.petrina" target="_blank" rel="noreferrer" aria-label="Instagram">
+                  <img src="https://cdn.simpleicons.org/instagram/111111" alt="Instagram" />
+                </a>
+                <a href="https://linkedin.com/in/marko-petrina-a89b4a261/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/markopetrins" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <img src="https://cdn.simpleicons.org/github/111111" alt="GitHub" />
+                </a>
+                <a href="https://facebook.com/mpetrina1/" target="_blank" rel="noreferrer" aria-label="Facebook">
+                  <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" />
+                </a>
+                <a href="mailto:markopetrins@gmail.com" aria-label="Email">
+                  <img src="https://cdn.simpleicons.org/gmail/111111" alt="Email" />
+                </a>
+              </div>
+              <button type="button" class="retro-btn contact-flash-btn" data-go-page="contact">
+                CONTACT ME
+              </button>
+            </div>
+            <article class="info-block">
+              <p>
+                I am a full-stack software developer with strong training in Software Development
+                and Software Support from Mohawk College, where I have consistently earned Dean's
+                Honour List standing. Across co-op, internship, and contract roles, I have built
+                end-to-end solutions using React, Vue, Angular, .NET, Node.js, and SQL systems. I
+                am attending McMaster University studying Software Engineering to earn a Bachelor
+                of Technology.
+              </p>
+              <p>
+                My work spans frontend and backend development, including responsive interfaces,
+                API design, data pipelines, and real-time integrations for reporting platforms and
+                internal business tools. I also focus on local AI model deployment and practical
+                AI-driven selection systems, with strong interest in transparent, high-performance
+                solutions that connect software, infrastructure, and real-world impact.
+              </p>
+              <div class="carousel-block education-carousel">
+                <div class="carousel-header">
+                  <h3>Education</h3>
+                </div>
+                <div class="carousel-window" data-carousel="education">
+                  <div class="carousel-track">
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/schools/mcmaster-university.jpg" alt="McMaster University logo" />
+                      <h4>McMaster University</h4>
+                      <p>Software Engineering - Bachelor of Technology</p>
+                      <p class="progress-row">
+                        In Progress
+                        <span class="loading-spinner" aria-label="In progress"></span>
+                      </p>
+                    </article>
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/schools/mohawk-college.jpg" alt="Mohawk College logo" />
+                      <h4>Mohawk College</h4>
+                      <p>Software Development Advanced Diploma</p>
+                      <p>GPA: 4.2</p>
+                    </article>
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/schools/mohawk-college.jpg" alt="Mohawk College logo" />
+                      <h4>Mohawk College</h4>
+                      <p>Software Support</p>
+                      <p>Advanced Diploma</p>
+                      <p>GPA: 3.52</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-block experience-carousel">
+                <div class="carousel-header">
+                  <h3>Previous Experience</h3>
+                </div>
+                <div class="carousel-window" data-carousel="experience">
+                  <div class="carousel-track">
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/companies/royal-canadian-air-force-museum.jpg" alt="Royal Canadian Air Force Museum logo" />
+                      <h4>AI Research Assistant (Applied Research)</h4>
+                      <p class="company-line">Royal Canadian Air Force Museum</p>
+                      <p class="date-line">Jan 2025 - Apr 2025</p>
+                      <p class="summary-line">
+                        Supported AI facial recognition research using archival and family-provided
+                        images to improve unknown soldier identification accuracy.
+                      </p>
+                    </article>
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/companies/the-crow-report.svg" alt="The Crow Report logo" />
+                      <h4>Software Developer (Contract)</h4>
+                      <p class="company-line">The Crow Report</p>
+                      <p class="date-line">Jun 2025 - Aug 2025</p>
+                      <p class="summary-line">
+                        Expanded a live sports platform with API and real-time data integrations
+                        while improving frontend performance and ad monetization readiness.
+                      </p>
+                    </article>
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/companies/actors-pocket-guide.png" alt="Actor's Pocket Guide logo" />
+                      <h4>Frontend Web Developer (Intern)</h4>
+                      <p class="company-line">Actor's Pocket Guide</p>
+                      <p class="date-line">Feb 2025 - Jun 2025</p>
+                      <p class="summary-line">
+                        Built scalable Angular UI components and analytics dashboard features for a
+                        stable, data-driven platform used in the film industry.
+                      </p>
+                    </article>
+                    <article class="carousel-card photo-frame">
+                      <img class="logo-image" src="./assets/images/companies/rosa-flora-limited.png" alt="Rosa Flora Limited logo" />
+                      <h4>Software Developer <br />(Co-op)</h4>
+                      <p class="company-line">Rosa Flora Limited</p>
+                      <p class="date-line">Apr 2024 - Aug 2024</p>
+                      <p class="summary-line">
+                        Developed full-stack internal tools including a consolidated reporting
+                        system replacing 20+ reports to improve operational efficiency.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="skills" class="page" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <div class="skills-grid">
+            <div class="skills-box">
+              <h3>Programming Languages</h3>
+              <ul class="skill-chip-list">
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Python</li>
+                <li>C#</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>SQL</li>
+                <li>HTML / CSS</li>
+              </ul>
+            </div>
+            <div class="skills-box">
+              <h3>Development Strengths</h3>
+              <div class="skill-item">
+                <label for="fullstack">Full-Stack Delivery</label>
+                <div class="skill-bar"><span id="fullstack" style="--value: 92%"></span></div>
+              </div>
+              <div class="skill-item">
+                <label for="api">API Integration</label>
+                <div class="skill-bar"><span id="api" style="--value: 90%"></span></div>
+              </div>
+              <div class="skill-item">
+                <label for="data">Data and SQL Systems</label>
+                <div class="skill-bar"><span id="data" style="--value: 88%"></span></div>
+              </div>
+              <div class="skill-item">
+                <label for="ui">UI Engineering</label>
+                <div class="skill-bar"><span id="ui" style="--value: 90%"></span></div>
+              </div>
+              <div class="skill-item">
+                <label for="optimization">Performance Optimization</label>
+                <div class="skill-bar"><span id="optimization" style="--value: 87%"></span></div>
+              </div>
+            </div>
+            <div class="skills-box skills-box-wide">
+              <h3>Frameworks, Tools, and Infrastructure</h3>
+              <div class="stack-groups">
+                <section class="stack-group">
+                  <h4>Frameworks</h4>
+                  <ul class="skill-chip-list">
+                    <li>React</li>
+                    <li>Angular</li>
+                    <li>Vue.js</li>
+                    <li>Vuetify</li>
+                    <li>.NET</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                  </ul>
+                </section>
+                <section class="stack-group">
+                  <h4>Data and Tools</h4>
+                  <ul class="skill-chip-list">
+                    <li>MySQL</li>
+                    <li>SQL Server</li>
+                    <li>MongoDB</li>
+                    <li>Firebase</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>Postman</li>
+                    <li>Visual Studio</li>
+                  </ul>
+                </section>
+                <section class="stack-group">
+                  <h4>AI and Infrastructure</h4>
+                  <ul class="skill-chip-list">
+                    <li>Local AI model deployment</li>
+                    <li>Model tuning workflows</li>
+                    <li>AI electoral analysis systems</li>
+                    <li>Real-time data pipelines</li>
+                    <li>Homelab environments</li>
+                    <li>Server setup and self-hosting</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="page" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <div class="project-gallery">
+            <a
+              class="photo-frame project-card"
+              href="https://github.com/markopetrins/IntrinsicIQ"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open IntrinsicIQ on GitHub"
+            >
+              <div class="project-image">
+                <img src="./assets/images/projects/project-1.jpg" alt="Project One preview" />
+              </div>
+              <div class="project-meta">
+                <h3>IntrinsicIQ</h3>
+                <p class="project-subtitle">Gold Purity and ROI Detector</p>
+                <p class="project-summary">
+                  Browser extension that analyzes Facebook Marketplace gold and silver listings,
+                  estimates purity and weight value, and compares market pricing to surface likely
+                  ROI opportunities.
+                </p>
+              </div>
+              <span class="project-link-indicator" aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="photo-frame project-card"
+              href="https://github.com/markopetrins/Cyber-Portfolio-Template"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Template For Portfolio Page on GitHub"
+            >
+              <div class="project-image">
+                <img src="./assets/images/projects/project-2.jpg" alt="Template For Portfolio Page preview" />
+              </div>
+              <div class="project-meta">
+                <h3>Template For Portfolio Page</h3>
+                <p class="project-subtitle">Retro Developer Portfolio Template</p>
+                <p class="project-summary">
+                  A reusable personal portfolio template focused on clean navigation, animated
+                  section transitions, responsive layouts, and customizable project/resume blocks
+                  for developer branding.
+                </p>
+              </div>
+              <span class="project-link-indicator" aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="photo-frame project-card"
+              href="https://github.com/markopetrins/Amazon-Product-Image-Grabber"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Amazon Product Image Scraper on GitHub"
+            >
+              <div class="project-image">
+                <img src="./assets/images/projects/project-3.jpg" alt="Amazon Product Image Scraper preview" />
+              </div>
+              <div class="project-meta">
+                <h3>Amazon Product Image Scraper</h3>
+                <p class="project-subtitle">Python High-Resolution Image Extractor</p>
+                <p class="project-summary">
+                  Python scraper that collects every available image from an Amazon product listing
+                  and prioritizes the highest-quality versions for download-ready output.
+                </p>
+              </div>
+              <span class="project-link-indicator" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="resume" class="page" aria-labelledby="resume-title">
+          <h2 id="resume-title">Resume</h2>
+          <div class="resume-actions">
+            <a class="retro-btn resume-download-btn" href="./assets/Marko%20Petrina%20Resume.pdf" download>
+              Download Resume
+            </a>
+          </div>
+          <div class="resume-viewer photo-frame">
+            <iframe
+              id="resume-frame"
+              title="Resume PDF"
+              src="./assets/Marko%20Petrina%20Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitV"
+            ></iframe>
+          </div>
+        </section>
+
+        <section id="contact" class="page" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact Me</h2>
+          <p class="contact-intro">
+            Open to project-based work and consulting engagements. If you need a developer who can
+            build, integrate AI, and solve technical problems quickly, send a request below.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-panel contact-services photo-frame">
+              <h3>What I Can Do For You</h3>
+              <ul class="service-list">
+                <li>Custom websites and web application features</li>
+                <li>AI integration into existing or new products</li>
+                <li>Backend API development and optimization</li>
+                <li>Codebase debugging and performance improvements</li>
+                <li>Technical consulting for product planning</li>
+              </ul>
+            </div>
+
+            <form class="contact-panel contact-form contact-quote photo-frame">
+              <h3>Request Work / Get a Quote</h3>
+              <label for="client-name">Name</label>
+              <input id="client-name" name="client-name" type="text" placeholder="Your full name" />
+
+              <label for="client-email">Email</label>
+              <input
+                id="client-email"
+                name="client-email"
+                type="email"
+                placeholder="yourname@email.com"
+              />
+
+              <label for="project-type">Project Type</label>
+              <select id="project-type" name="project-type">
+                <option>Website Development</option>
+                <option>AI Integration</option>
+                <option>Debugging / Fixes</option>
+                <option>Consulting</option>
+                <option>Other</option>
+              </select>
+
+              <label for="project-budget">Estimated Budget</label>
+              <input id="project-budget" name="project-budget" type="text" placeholder="e.g. $2,000 - $5,000" />
+
+              <label for="project-details">Project Details</label>
+              <textarea
+                id="project-details"
+                name="project-details"
+                rows="5"
+                placeholder="Describe your goals, timeline, and what you need help with."
+              ></textarea>
+
+              <div class="contact-actions">
+                <button type="submit" class="retro-btn">Send Request</button>
+                <a class="retro-btn contact-link" href="mailto:markopetrins@gmail.com">Email Directly</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
