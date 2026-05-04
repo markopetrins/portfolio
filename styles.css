@@ -29,6 +29,10 @@ body {
   cursor: crosshair;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 .app {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -85,6 +89,14 @@ body {
   gap: 0.6rem;
   border-right: 1px solid #9a9a9a;
   background: #efd37a;
+}
+
+.sidebar-menu {
+  display: contents;
+}
+
+.mobile-nav-toggle {
+  display: none;
 }
 
 .lang-toggle {
@@ -190,6 +202,7 @@ h3 {
 
 .nav-link {
   width: 100%;
+  min-height: 44px;
   text-align: left;
   border: 1px solid #3a3a3a;
   background: #dcdcdc;
@@ -319,8 +332,8 @@ h3 {
 }
 
 .social-links a {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border: 1px solid #6d6d6d;
   background: #e6e6e6;
   display: grid;
@@ -334,8 +347,8 @@ h3 {
 }
 
 .social-links img {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   display: block;
 }
 
@@ -700,6 +713,7 @@ h3 {
   padding: 0.3rem 0.8rem;
   font: inherit;
   cursor: pointer;
+  min-height: 44px;
 }
 
 .retro-btn:active {
@@ -786,7 +800,7 @@ h3 {
   border: 1px solid #5e5e5e;
   background: #f8f8f8;
   color: var(--text);
-  padding: 0.45rem 0.55rem;
+  padding: 0.6rem 0.65rem;
   font: inherit;
 }
 
@@ -859,15 +873,78 @@ h3 {
     z-index: 10;
     border-right: 0;
     border-bottom: 1px solid #9a9a9a;
+    padding: 0.9rem 0.8rem;
+    gap: 0.45rem;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    margin-bottom: 0.55rem;
+    font-size: 0.88rem;
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-block;
+    width: 100%;
+    font-weight: 700;
+    background: #d8bc60;
+    border-color: #fff3be #7e6722 #7e6722 #fff3be;
+    margin: 0.2rem 0 0.3rem;
+  }
+
+  .sidebar-menu {
+    display: none;
+  }
+
+  .sidebar-menu.is-open {
+    display: block;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 0.45rem 0.4rem;
+    font-size: 0.86rem;
+  }
+
+  .nav-link:hover {
+    transform: none;
+  }
+
+  .lang-toggle-wrap {
+    margin-top: 0.2rem;
+    align-self: stretch;
   }
 
   .content-area {
     min-height: 70vh;
-    padding-top: 0;
+    padding: 0.75rem;
   }
 
   .page {
-    inset: 1rem 0.5rem 0.5rem;
+    position: static;
+    inset: auto;
+    padding: 0.65rem;
+    transform: none;
+    transition: opacity 0.25s ease;
+    overflow-y: visible;
+    display: none;
+    margin: 0;
+    min-height: auto;
+    background: #ededed;
+    pointer-events: none;
+  }
+
+  .page.active {
+    display: block;
+    pointer-events: auto;
   }
 
   .about-layout,
@@ -882,13 +959,131 @@ h3 {
   }
 
   .carousel-card {
-  flex: 0 1 min(250px, 70vw);
-  min-height: 165px;
-}
+    flex: 1 1 100%;
+    min-height: 150px;
+  }
+
+  .project-image {
+    height: clamp(190px, 52vw, 280px);
+  }
+
+  .project-card {
+    padding-bottom: 1.7rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-actions .retro-btn,
+  .contact-actions .contact-link {
+    width: 100%;
+    text-align: center;
+  }
 
   #resume-frame {
     height: 64vh;
     width: min(100%, calc(64vh * 8.5 / 11));
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.96rem;
+    cursor: auto;
+  }
+
+  .app {
+    margin: 0.35rem;
+    min-height: calc(100vh - 0.7rem);
+  }
+
+  .sidebar {
+    padding: 0.75rem 0.65rem;
+  }
+
+  .nav-list {
+    grid-template-columns: 1fr;
+  }
+
+  .content-area {
+    padding: 0.55rem;
+  }
+
+  .page {
+    padding: 0.5rem;
+  }
+
+  .about-left-column {
+    gap: 0.45rem;
+  }
+
+  .profile-photo {
+    min-height: 220px;
+  }
+
+  .social-links {
+    gap: 0.4rem;
+  }
+
+  .skill-chip-list li {
+    font-size: 0.86rem;
+  }
+
+  .project-summary {
+    font-size: 0.8rem;
+  }
+
+  #resume-frame {
+    display: none;
+  }
+
+  .resume-viewer {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-title {
+    font-size: 1.08rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 0.96rem;
+  }
+
+  .project-image {
+    height: clamp(165px, 50vw, 220px);
+  }
+
+  .lang-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (hover: none) {
+  .photo-frame:hover,
+  .social-links a:hover,
+  .retro-btn.contact-flash-btn:hover {
+    transform: none;
+    box-shadow: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

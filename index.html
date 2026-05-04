@@ -19,27 +19,37 @@
       <aside class="sidebar">
         <h1 class="site-title">Marko Petrina</h1>
         <p class="subtitle">Developer Portfolio</p>
-        <nav aria-label="Main navigation">
-          <ul class="nav-list">
-            <li><button class="nav-link active" data-page="about">About Me</button></li>
-            <li><button class="nav-link" data-page="skills">Skills</button></li>
-            <li><button class="nav-link" data-page="projects">Projects</button></li>
-            <li><button class="nav-link" data-page="resume">Resume</button></li>
-            <li><button class="nav-link" data-page="contact">Contact Me</button></li>
-          </ul>
-        </nav>
-        <div class="lang-toggle-wrap">
-          <p class="lang-note">I'm Bilingual</p>
-          <button
-            type="button"
-            class="lang-toggle"
-            aria-label="Switch language to Croatian"
-            aria-pressed="false"
-            data-lang="en"
-          >
-            <span class="flag-icon" aria-hidden="true"></span>
-            <span class="lang-label">EN</span>
-          </button>
+        <button
+          type="button"
+          class="retro-btn mobile-nav-toggle"
+          aria-expanded="false"
+          aria-controls="sidebar-menu"
+        >
+          Menu
+        </button>
+        <div id="sidebar-menu" class="sidebar-menu">
+          <nav aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><button class="nav-link active" data-page="about">About Me</button></li>
+              <li><button class="nav-link" data-page="skills">Skills</button></li>
+              <li><button class="nav-link" data-page="projects">Projects</button></li>
+              <li><button class="nav-link" data-page="resume">Resume</button></li>
+              <li><button class="nav-link" data-page="contact">Contact Me</button></li>
+            </ul>
+          </nav>
+          <div class="lang-toggle-wrap">
+            <p class="lang-note">I'm Bilingual</p>
+            <button
+              type="button"
+              class="lang-toggle"
+              aria-label="Switch language to Croatian"
+              aria-pressed="false"
+              data-lang="en"
+            >
+              <span class="flag-icon" aria-hidden="true"></span>
+              <span class="lang-label">EN</span>
+            </button>
+          </div>
         </div>
       </aside>
 
