@@ -699,11 +699,18 @@ h3 {
   margin-bottom: 0.75rem;
   display: flex;
   justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .resume-download-btn {
   text-decoration: none;
   display: inline-block;
+}
+
+.resume-open-btn {
+  text-decoration: none;
+  display: none;
 }
 
 .retro-btn {
@@ -1040,6 +1047,10 @@ h3 {
 
   .resume-viewer {
     min-height: 0;
+  }
+
+  .resume-open-btn {
+    display: inline-block;
   }
 }
 
